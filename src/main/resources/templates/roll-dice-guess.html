@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head-fragment :: head-partial"></head>
+<body>
+    <div class="row">
+        <div class="col s4 offset-s4 valign-wrapper">
+            <!-- Dropdown Trigger -->
+            <a id="dice-dropdown-btn" class='dropdown-button btn center-align' href='#' data-activates='dice-dropdown'>Guess The Dice Value!</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dice-dropdown' class='dropdown-content center-align'>
+                <li><a href="/roll-dice/1">one</a></li>
+                <li><a href="/roll-dice/2">two</a></li>
+                <li><a href="/roll-dice/3">three</a></li>
+                <li><a href="/roll-dice/4">four</a></li>
+                <li><a href="/roll-dice/5">five</a></li>
+                <li><a href="/roll-dice/6">six</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div th:replace="fragments/js-footer-fragment :: js-partial"></div>
+</body>
+</html>
