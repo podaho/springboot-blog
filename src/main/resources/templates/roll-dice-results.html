@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head-fragment :: head-partial"></head>
+<body>
+    <div th:replace="fragments/navbar-fragment :: navbar-partial"></div>
+    <h3 class="center-align">
+        Dice One Rolls: <span th:text="${rand1}"></span>
+        <i class="large material-icons" th:if="${rand1}==${userGuess}">check</i>
+    </h3>
+    <h3 class="center-align">
+        Dice Two Rolls: <span th:text="${rand2}"></span>
+        <i class="large material-icons" th:if="${rand2}==${userGuess}">check</i>
+    </h3>
+    <h3 class="center-align">
+        Dice Three Rolls: <span th:text="${rand3}"></span>
+        <i class="large material-icons" th:if="${rand3}==${userGuess}">check</i>
+    </h3>
+    <h3 class="center-align">
+        Dice Four Rolls: <span th:text="${rand4}"></span>
+        <i class="large material-icons" th:if="${rand4}==${userGuess}">check</i>
+    </h3>
+    <h3 class="center-align">
+        Dice Five Rolls: <span th:text="${rand5}"></span>
+        <i class="large material-icons" th:if="${rand5}==${userGuess}">check</i>
+    </h3>
+    <h3 class="center-align">
+        Dice Six Rolls: <span th:text="${rand6}"></span>
+        <i class="large material-icons" th:if="${rand6}==${userGuess}">check</i>
+    </h3>
+    <h3 class="center-align">You Guessed: <span th:text="${userGuess}"></span></h3>
+    <div th:replace="fragments/footer-fragment :: footer-partial"></div>
+    <div th:replace="fragments/js-footer-fragment :: js-partial"></div>
+</body>
+</html>
