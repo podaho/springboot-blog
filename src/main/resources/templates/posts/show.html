@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head-fragment :: head-partial"></head>
+<body>
+<div th:replace="fragments/navbar-fragment :: navbar-partial"></div>
+<div class="row">
+    <div class="col s8 offset-s2">
+        <h1 th:text="${post.getTitle()}"></h1>
+        <p th:text="${post.getBody()}"></p>
+    </div>
+</div>
+<div th:replace="fragments/footer-fragment :: footer-partial"></div>
+<div th:replace="fragments/js-footer-fragment :: js-partial"></div>
+</body>
+</html>
