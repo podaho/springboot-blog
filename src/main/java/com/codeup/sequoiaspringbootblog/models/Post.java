@@ -16,11 +16,7 @@ public class Post {
         this.body = body;
     }
 
-    public Post() {
-        this.id = -1;
-        this.title = "null post title";
-        this.body = "null post body";
-    }
+    public Post() { }
 
     public long getId() {
         return id;
