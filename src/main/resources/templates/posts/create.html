@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head-fragment :: head-partial('Create New Post')"></head>
+<body>
+<div th:replace="fragments/navbar-fragment :: navbar-partial"></div>
+<div class="row">
+    <form action="/posts/create" method="post" class="col s8 offset-s2" th:object="${post}">
+        <div class="input-field">
+            <input id="title" type="text" th:field="*{title}"/>
+            <label for="title">Blog Title</label>
+        </div>
+        <div class="input-field">
+            <textarea id="body" class="materialize-textarea" th:field="*{body}"></textarea>
+            <label for="body">Blog Body</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
+<div th:replace="fragments/footer-fragment :: footer-partial"></div>
+<div th:replace="fragments/js-footer-fragment :: js-partial"></div>
+</body>
+</html>
