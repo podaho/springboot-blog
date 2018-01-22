@@ -32,6 +32,19 @@ public class PostsController {
         return "posts/show";
     }
 
+    @GetMapping("/posts/{id}/edit")
+    public String editIndividualPost(@PathVariable String id, Model m) {
+        Post post = service.retrievePostById(Long.parseLong(id));
+        m.addAttribute("post", post);
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/edit")
+    public String postEditPost(@ModelAttribute Post post) {
+        service.edit(post);
+        return "redirect:/posts";
+    }
+
     @GetMapping("/posts/create")
     public String getCreatePostForm(Model m) {
         Post post = new Post();

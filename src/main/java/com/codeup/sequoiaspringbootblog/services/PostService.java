@@ -29,6 +29,9 @@ public class PostService {
         return new Post();
     }
 
+    public void edit(Post post) {
+        posts.set((int)post.getId()-1, post);
+    }
 
     public Post save(Post post) {
         post.setId(posts.size() + 1);
