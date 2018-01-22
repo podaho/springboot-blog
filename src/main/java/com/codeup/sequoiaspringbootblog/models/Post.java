@@ -1,8 +1,17 @@
 package com.codeup.sequoiaspringbootblog.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "posts")
 public class Post {
+    @Id @GeneratedValue
     private long id;
+
+    @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String body;
 
     public Post(String title, String body) {

@@ -20,7 +20,7 @@ public class PostsController {
 
     @GetMapping("/posts")
     public String getPostIndex(Model m) {
-        List<Post> posts = service.all();
+        Iterable<Post> posts = service.all();
         m.addAttribute("postsArr", posts);
         return "posts/index";
     }
@@ -55,6 +55,12 @@ public class PostsController {
     @PostMapping("/posts/create")
     public String postNewPost(@ModelAttribute Post post) {
         service.save(post);
+        return "redirect:/posts";
+    }
+
+    @GetMapping("/posts/{id}/delete")
+    public String removePost(@PathVariable long id) {
+        service.delete(id);
         return "redirect:/posts";
     }
 }

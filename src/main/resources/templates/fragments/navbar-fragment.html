@@ -3,11 +3,10 @@
 <body>
     <nav th:fragment="navbar-partial">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Springboot Blog</a>
+            <a th:href="@{/}" class="brand-logo">Springboot Blog</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
+                <li><a th:href="@{/posts/create}">Create</a></li>
+                <li><a th:href="@{/posts}">Post Listing</a></li>
             </ul>
         </div>
     </nav>
