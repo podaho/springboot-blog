@@ -58,6 +58,7 @@ public class PostsController {
         return "redirect:/posts";
     }
 
+    //Should use Post but Post will need the delete button to be in a form, since anchor tags will default on get methods
     @GetMapping("/posts/{id}/delete")
     public String removePost(@PathVariable long id) {
         service.delete(id);
