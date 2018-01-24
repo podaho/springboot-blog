@@ -2,6 +2,7 @@ package com.codeup.sequoiaspringbootblog.services;
 
 import com.codeup.sequoiaspringbootblog.daos.PostsRepository;
 import com.codeup.sequoiaspringbootblog.models.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 public class PostService {
     private PostsRepository postDao;
 
+    @Autowired
     public PostService(PostsRepository postDao) {
         this.postDao = postDao;
     }
