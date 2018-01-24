@@ -3,6 +3,7 @@ package com.codeup.sequoiaspringbootblog.models;
 import javax.persistence.Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -19,13 +20,31 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToMany(cascade = )
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Post> posts;
+
+    public User(String username, String password, String email, List<Post> posts) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.posts = posts;
+    }
 
     public User(long id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public User() {};
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public long getId() {
